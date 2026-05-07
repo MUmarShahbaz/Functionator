@@ -1,0 +1,31 @@
+{
+  "name": "functionator",
+  "version": "1.0.0",
+  "description": "Context aware Maths Parser for JavaScript",
+  "keywords": [
+    "Functionator",
+    "Maths",
+    "Parser",
+    "Assignments",
+    "Hashmap"
+  ],
+  "homepage": "https://github.com/MUmarShahbaz/Functionator#readme",
+  "bugs": {
+    "url": "https://github.com/MUmarShahbaz/Functionator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MUmarShahbaz/Functionator.git"
+  },
+  "license": "MIT",
+  "author": "MUmarShahbaz",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "npx tsc && node esbuild.mjs",
+    "prod": "npx tsc && node esbuild.mjs --minify"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.3"
+  }
+}
