@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-ts",
+      "type": "shell",
+      "command": "npx tsc ${file} --ignoreConfig --outDir temp --sourceMap true"
+    }
+  ]
+}
