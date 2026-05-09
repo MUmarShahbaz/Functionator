@@ -1,7 +1,7 @@
-console.log("Hi broski")
+import { TokenType, tokenize } from "./tokenizer.js";
 
-export class Functionator {
-    constructor() {
-        console.log('sup again.....broski!!')
-    }
+let tokens = tokenize('5 + 67 + 69 + func(x)');
+
+for (let i = 0; i < tokens.length; i++) {
+    console.log(`Token: ${tokens[i].value}\t, Type: ${TokenType[tokens[i].type]}`)
 }

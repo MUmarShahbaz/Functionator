@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "author": "MUmarShahbaz",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "npx tsc && node esbuild.mjs",
     "prod": "npx tsc && node esbuild.mjs --minify"
