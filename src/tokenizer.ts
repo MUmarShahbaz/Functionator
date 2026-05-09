@@ -3,7 +3,7 @@ export enum TokenType { Text, Constant, Operator, Dot, BracketOpen, BracketClose
 
 export class Tokenizer {
     getTokenType(char: string): TokenType {
-        if (char >= "a" && char <= "z" || char >= "A" && char <= "Z") return TokenType.Text;
+        if (char >= "a" && char <= "z" || char >= "A" && char <= "Z" || char === '_') return TokenType.Text;
         if (char >= "0" && char <= "9") return TokenType.Constant;
         if ("+-*/".includes(char)) return TokenType.Operator;
         if (char === '.') return TokenType.Dot;
