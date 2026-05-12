@@ -1,4 +1,4 @@
-import { Context, DEFAULT_CONTEXT } from "./context.js";
+import { Context, DEFAULT_CONTEXT } from "./index.js";
 
 export type Token = { type: TokenType, value: number | string };
 export enum TokenType {

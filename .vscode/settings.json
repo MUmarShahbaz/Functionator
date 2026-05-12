@@ -4,7 +4,5 @@
         "package-lock.json": true,
         "src/**.js": true,
         "src/**.js.map": true,
-        "test/**.js": true,
-        "test/**.js.map": true
     }
 }
