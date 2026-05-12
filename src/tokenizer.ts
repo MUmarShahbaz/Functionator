@@ -9,14 +9,19 @@ export enum TokenType {
 };
 
 export class Tokenizer {
-    context : Context = DEFAULT_CONTEXT;
-    identifiers : Array<string> = [];
+    context : Context;
+    identifier_list : Array<string> = [];
+
+    constructor (context : Context = DEFAULT_CONTEXT) {
+        this.context = context;
+        this.refreshIdentifiers();
+    }
 
     refreshIdentifiers() {
-        this.identifiers = [];
-        this.identifiers.push(...this.context.identifiers.variables.keys());
-        this.identifiers.push(...this.context.identifiers.functions.keys());
-        this.identifiers.sort((a : string, b : string) => b.length - a.length);
+        this.identifier_list = [];
+        this.identifier_list.push(...this.context.identifiers.variables.keys());
+        this.identifier_list.push(...this.context.identifiers.functions.keys());
+        this.identifier_list.sort((a : string, b : string) => b.length - a.length);
     }
 
     getTokenType(char: string): TokenType {
@@ -36,13 +41,13 @@ export class Tokenizer {
 
         let res : Array<Token> = [];
 
-        for (let i = 0; i < this.identifiers.length; i++) {
-            let identifier = this.identifiers[i];
+        for (let i = 0; i < this.identifier_list.length; i++) {
+            let identifier = this.identifier_list[i];
             if (identifier.length >= text.length) continue;
             if (text.includes(identifier)) {
                 let index : number = text.indexOf(identifier);
                 let subs : Array<string> = [text.slice(0, index), text.slice(index + identifier.length)];
-                let token : Token = {type: this.context.identifiers.variables.has(identifier) ? TokenType.Variable : TokenType.Function, value: identifier};
+                let token : Token = {type: this.context.identifiers.functions.has(identifier) ? TokenType.Function : TokenType.Variable, value: identifier};
                 res.push(...this.checkIdentifiers(subs[0]), token, ...this.checkIdentifiers(subs[1]));
                 break;
             }
