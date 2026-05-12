@@ -1,3 +1,6 @@
 node_modules
-.vscode/settings.json
 temp
+src/**.js
+src/**.js.map
+test/**.js
+test/**.js.map

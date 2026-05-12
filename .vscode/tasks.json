@@ -4,7 +4,7 @@
     {
       "label": "build-ts",
       "type": "shell",
-      "command": "npx tsc ${file} --ignoreConfig --outDir temp --sourceMap true"
+      "command": "npx tsc ${file} --ignoreConfig --sourceMap true"
     }
   ]
 }
