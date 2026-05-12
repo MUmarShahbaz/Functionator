@@ -6,9 +6,9 @@
       "type": "node",
       "request": "launch",
       "preLaunchTask": "build-ts",
-      "program": "${workspaceFolder}/temp/${fileBasenameNoExtension}.js",
+      "program": "${workspaceFolder}/temp/${fileDirnameBasename}/${fileBasenameNoExtension}.js",
       "outFiles": [
-        "${workspaceFolder}/output/**/*.js"
+        "${workspaceFolder}/temp/**/*.js",
       ],
       "console": "integratedTerminal"
     }
